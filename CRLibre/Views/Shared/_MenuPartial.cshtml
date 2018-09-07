@@ -45,7 +45,7 @@
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     @User.Identity.Name
                 </a>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="/user">Información</a>
                     @Html.ActionLink("Cerrar Sesión", "Logoff", "Login", "Login", new { @class = "dropdown-item" })
                 </div>

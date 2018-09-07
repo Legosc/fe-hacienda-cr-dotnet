@@ -2,7 +2,11 @@
 @{
     ViewBag.Title = "Login";
 }
-    <div class="col offset-3 col-md-4 col-sm-12">
+@{
+    Layout = "~/Views/Shared/_LoginPage.cshtml";
+}
+
+    <div class="col offset-4 col-md-4 col-sm-12">
         <div class="col col-sm-12">
             <img src="@Href("~/Images/cropped-CRLibre-Logo_15-1.png")" class="img-fluid" alt="Logo">
         </div>

@@ -41,14 +41,18 @@ namespace CRLibre.Controllers
             try
             {
                 account = jObjet.ToObject<User>();
-                account.lastAccess = new DateTime(int.Parse(account.lastAccess) * 10000).ToString();
+                account.lastAccess = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Convert.ToDouble(account.lastAccess)).ToString();
+                account.timestamp = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Convert.ToDouble(account.timestamp)).ToString();
+
+
             }
             catch (Exception e)
             {
-
+                throw;
             }
             return View(account);
         }
+        
 
                // GET: User/Edit/5
         public ActionResult Edit(int id)
