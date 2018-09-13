@@ -9,7 +9,7 @@ namespace CRLibre.Models
     {
         public int id { get; set; }
         public string nombre { get; set; }
-        public int tipo_identificacion { get; set; }
-        public int numero_identificacion { get; set; }
+        public string tipo_identificacion { get; set; }
+        public string numero_identificacion { get; set; }
     }
 }

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace CRLibre.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
@@ -28,7 +29,7 @@ namespace CRLibre.Controllers
         public ActionResult Index()
         {
             var claims = User.Identity as ClaimsIdentity;
-            var sessionKey = claims.FindFirst(ClaimTypes.Sid).Value;
+            var sessionKey = claims.FindFirst(ClaimTypes.Hash).Value;
             var values = new Dictionary<string, string>
                 {
                    { "iam", User.Identity.Name },
@@ -41,14 +42,18 @@ namespace CRLibre.Controllers
             try
             {
                 account = jObjet.ToObject<User>();
-                account.lastAccess = new DateTime(int.Parse(account.lastAccess) * 10000).ToString();
+                account.lastAccess = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Convert.ToDouble(account.lastAccess)).ToString();
+                account.timestamp = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Convert.ToDouble(account.timestamp)).ToString();
+
+
             }
             catch (Exception e)
             {
-
+                throw;
             }
             return View(account);
         }
+        
 
                // GET: User/Edit/5
         public ActionResult Edit(int id)

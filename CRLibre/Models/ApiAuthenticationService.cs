@@ -54,7 +54,7 @@ namespace CRLibre.Models
             identity.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", "API CrLibre"));
             identity.AddClaim(new Claim(ClaimTypes.Name, Name));
             identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, Name));
-            identity.AddClaim(new Claim(ClaimTypes.Sid, sessionKey));
+            identity.AddClaim(new Claim(ClaimTypes.Hash, sessionKey));
             return identity;
         }
     }

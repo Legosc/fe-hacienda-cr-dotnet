@@ -30,8 +30,8 @@ namespace CRLibre
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
-                "~/Content/font-awesome.css",
-                "~/Content/sb-admin.css", "~/Content/Site.css"));
+                "~/Content/font-face.css",
+                "~/Content/theme.css"));
         }
     }
 }

@@ -1,0 +1,41 @@
+﻿<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="#">
+            <img src="~/Images/cropped-CRLibre-Logo_15-1.png" class="img-fluid" alt="Logo">
+        </a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li class="has-sub @(Url.RouteUrl(ViewContext.RouteData.Values) == "/Home" ? "active" : "")">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-tachometer-alt"></i>Reportes
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="/reportes/ventas">Ventas</a>
+                        </li>
+                        <li>
+                            <a href="/reportes/compras">Compras</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="@(Url.RouteUrl(ViewContext.RouteData.Values) == "/ventas" ? "active" : "")">
+                    <a href="/ventas">
+                        <i class="fas fa-chart-bar"></i>Ventas
+                    </a>
+                </li>
+                <li @(Url.RouteUrl(ViewContext.RouteData.Values) == "/compras" ? "active" : "")>
+                    <a href="/compras">
+                        <i class="fas fa-table"></i>Compras
+                    </a>
+                </li>
+                <li class="@(Url.RouteUrl(ViewContext.RouteData.Values) == "/contact" ? "active" : "")">
+                    <a href="/contact">
+                        <i class="far fa-check-square"></i>Contactos
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
