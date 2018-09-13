@@ -175,6 +175,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -183,6 +184,7 @@
     </Compile>
     <Compile Include="Models\ApiAuthenticationService.cs" />
     <Compile Include="Models\ApiConnect.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\MenuView.cs" />
     <Compile Include="Models\Session.cs" />
@@ -330,6 +332,7 @@
     <Content Include="scss\_utilities.scss" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\Contactos\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
