@@ -30,7 +30,7 @@ namespace CRLibre.Controllers
         {
             var claims = User.Identity as ClaimsIdentity;
             IEnumerable<Contact> contactos;
-            var response = client.GetAsync(string.Format("http://localhost:3000/clients?userName={0}&sessionKey={1}", User.Identity.Name, claims.FindFirst(ClaimTypes.Hash).Value)).Result;
+            var response = client.GetAsync(string.Format("http://apiclientes.vitechd.com/api/clientes?userName={0}&sessionKey={1}", User.Identity.Name, claims.FindFirst(ClaimTypes.Hash).Value)).Result;
             var responseString =  response.Content.ReadAsStringAsync().Result;
             try
             {

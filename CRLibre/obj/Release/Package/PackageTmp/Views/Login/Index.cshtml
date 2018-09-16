@@ -2,27 +2,37 @@
 @{
     ViewBag.Title = "Login";
 }
-    <div class="col offset-3 col-md-4 col-sm-12">
-        <div class="col col-sm-12">
-            <img src="@Href("~/Images/cropped-CRLibre-Logo_15-1.png")" class="img-fluid" alt="Logo">
+@{
+    Layout = "~/Views/Shared/_LoginPage.cshtml";
+}
+
+<div class="login-wrap">
+    <div class="login-content">
+        <div class="login-logo">
+            <a href="#">
+                <img src="@Href("~/Images/cropped-CRLibre-Logo_15-1.png")" class="img-fluid" alt="Logo">
+            </a>
         </div>
-        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { role = "form" }))
+        <div class="login-form">
+            @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { role = "form" }))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             <label for="userName">Usuario</label>
-            @Html.TextBoxFor(model => model.userName, new { @class = "form-control", @placeholder = "Usuario" })
+            @Html.TextBoxFor(model => model.userName, new { @class = "au-input au-input--full", @placeholder = "Usuario" })
             @Html.ValidationMessageFor(model => model.userName, "", new { @class = "text-danger" })
         </div>
         <div class="form-group">
             <label for="pwd">Contraseña</label>
-            @Html.PasswordFor(model => model.pwd, new { @class = "form-control", @placeholder = "Contraseña" })
+            @Html.PasswordFor(model => model.pwd, new { @class = "au-input au-input--full", @placeholder = "Contraseña" })
             @Html.ValidationMessageFor(model => model.pwd, "", new { @class = "text-danger" })
         </div>
-        <button type="submit" class="btn btn-primary">Iniciar</button>
+        <button type="submit" class="au-btn au-btn--block au-btn--green m-b-20">Iniciar</button>
 }
+            
+            
+        </div>
     </div>
+</div>
     
-
-

@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="clientes-Web.config Connection String" description="clientes Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Datasource=50.62.209.120;Database=clientes;uid=clientes;pwd=z!cvH632;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\vitechd\\Documents\\Proyectos\ Git\\fe-hacienda-cr-dotnet\\CRLibre\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='clientes']/@connectionString" />
+  </parameter>
+</parameters>
